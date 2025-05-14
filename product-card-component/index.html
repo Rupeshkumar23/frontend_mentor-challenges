@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(30, 38%, 92%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      padding: 1rem;
+    }
+
+    .product-card {
+      display: flex;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      flex: 1;
+    }
+
+    .product-image picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-details {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .category {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: hsl(228, 12%, 48%);
+      font-size: 0.8rem;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    .product-name {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1;
+      color: hsl(212, 21%, 14%);
+    }
+
+    .description {
+      color: hsl(228, 12%, 48%);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+    }
+
+    .price-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .current-price {
+      color: hsl(158, 36%, 37%);
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Fraunces', serif;
+    }
+
+    .original-price {
+      color: hsl(228, 12%, 48%);
+      text-decoration: line-through;
+      font-size: 0.875rem;
+    }
+
+    .cart-button {
+      width: 100%;
+      padding: 1rem;
+      background-color: hsl(158, 36%, 37%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cart-button:hover {
+      background-color: hsl(158, 36%, 20%);
+    }
+
+    .cart-button img {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex-direction: column;
+        max-width: 345px;
+        margin: 1rem;
+      }
+
+      .product-image {
+        height: auto;
+      }
+
+      .product-details {
+        padding: 1.5rem;
+      }
+
+      .product-name {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        margin-bottom: 1.5rem;
+      }
+
+      .price-container {
+        margin-bottom: 1.5rem;
+      }
+
+      .current-price {
+        font-size: 1.75rem;
+      }
+
+      .cart-button {
+        padding: 0.875rem;
+      }
+    }
+
+    .attribution {
+      position: fixed;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      color: hsl(228, 12%, 48%);
+    }
+
+    .attribution a {
+      color: hsl(158, 36%, 37%);
+      text-decoration: none;
+    }
+
+    .attribution a:hover {
+      color: hsl(158, 36%, 20%);
+    }
+  </style>
+</head>
+<body>
+  <main class="product-card">
+    <div class="product-image">
+      <picture>
+        <source srcset="images/image-product-mobile.jpg" media="(max-width: 600px)">
+        <img src="images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum">
+      </picture>
+    </div>
+    <div class="product-details">
+      <p class="category">Perfume</p>
+      <h1 class="product-name">Gabrielle Essence Eau De Parfum</h1>
+      <p class="description">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+      Perfumer-Creator for the House of CHANEL.</p>
+      <div class="price-container">
+        <span class="current-price">$149.99</span>
+        <span class="original-price">$169.99</span>
+      </div>
+      <button class="cart-button">
+        <img src="images/icon-cart.svg" alt="cart icon">
+        Add to Cart
+      </button>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Rupeshkumar</a>.
+  </div>
+</body>
+</html>
